@@ -1,0 +1,8 @@
+{% extends "base.html"%}
+{% block  body %}
+<h2> Hello, {{ user["name"]}}</h2>
+{% for post in posts %}
+<p><b>{{ post["author"]}}</b> says: </p>
+<i>{{ post["article"] }}</i>
+{% endfor %}
+{% endblock %}
