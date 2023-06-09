@@ -1,5 +1,6 @@
 from app import app
-from flask import render_template
+from flask import render_template, redirect
+from app.forms import LoginForm
 
 
 @app.route("/")
@@ -20,3 +21,12 @@ def index():
     ]
 
     return render_template("index.html", user=user, posts=posts, title="Home")
+
+
+@app.route("/login", methods=["POST","GET"])
+def login():
+    form = LoginForm()
+    if form.is_validated():
+        return redirect("index")
+
+    return render_template("login.html", form=form, title="login")

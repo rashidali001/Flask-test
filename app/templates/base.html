@@ -12,9 +12,10 @@
 </head>
 <body>
     <nav>
-        <a href="">Home</a>
-        <a href="">Login</a>
+        <a href="{{ url_for('index')}}">Home</a>
+        <a href="{{ url_for('login')}}">Login</a>
     </nav>
+    <hr>
     {% block body %}{% endblock %}
     
 </body>
